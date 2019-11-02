@@ -22,7 +22,25 @@ weatherForm.addEventListener('submit', (event)=>{
     // {
     //     return console.log('Provide address')
     // }
-    fetch('http://localhost:3000/weather?address='+address).then((response)=>{
+    
+//     fetch('http://localhost:3000/weather?address='+address).then((response)=>{
+//     response.json().then((data)=>{
+//         //console.log(data)
+//         if(data.error){
+//             console.log(data.error)
+//             messageOne.textContent = data.error
+//         }
+//         else{
+//             console.log(data.location)
+//             console.log(data.address)
+//             console.log(data.forecast)
+//             messageOne.textContent = data.location
+//             messageTwo.textContent = data.forecast
+//         }
+//     })
+// })
+
+fetch('/weather?address='+address).then((response)=>{
     response.json().then((data)=>{
         //console.log(data)
         if(data.error){

@@ -7,6 +7,9 @@ const forecast = require('./utils/forecast')
 //express is a function that returns an object, its documentation can be found at expressjs.com
 const app = express()
 
+//to get port number dynamically from heroku
+const port = process.env.PORT || 3000
+
 //Setup paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -126,6 +129,6 @@ app.get('*',(req, res)=>{
  
 })
 
-app.listen(3000, ()=>{
-    console.log('Web server started and listening on port 3000')
+app.listen(port, ()=>{
+    console.log('Web server started and listening on port '+port)
 })
